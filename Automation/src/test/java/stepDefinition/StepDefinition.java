@@ -11,16 +11,28 @@ public class StepDefinition {
 	WebDriver driver ;
 	Step stepfile = new Step(Hooks.driver);
 	
-	@Given("Launch Brower")
-	public void launchBrower() {
+	@Given("the browser is launched")
+	public void launchBrowser() {
 		stepfile.launchBrowser();
 	}
-	@When("Enter the URL")
-	public void enterTheURL() {
-		stepfile.entertheURL();
+	@Given("the user searches for {string}")
+	public void searchForProduct(String string) {
+		stepfile.searchForProduct(string);
 	}
-	@Then("Verify the product")
-	public void verifyTheProduct() {
-		stepfile.close();
+	@Given("the user selects the product from the search results")
+	public void selectProductFromSearchResults() {
+		stepfile.selectProductFromSearchResults();
+	}
+	@Given("the product name and price are recorded")
+	public void captureProductDetails() {
+		stepfile.captureProductDetails();
+	}
+	@When("the user adds the product to the cart")
+	public void addProductToCart() {
+		stepfile.addProductToCart();
+	}
+	@Then("the product added to the cart should match the recorded details")
+	public void verifyProductInCart() {
+		stepfile.verifyProductInCart();
 	}
 }
