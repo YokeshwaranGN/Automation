@@ -9,8 +9,9 @@ import step.Step;
 
 public class StepDefinition {
 	WebDriver driver ;
-	Step stepfile = new Step(Hooks.driver);
-	
+//	Step stepfile = new Step(Hooks.driver);
+	Step stepfile = new Step(DriverFactory.getDriver());
+
 	@Given("the browser is launched")
 	public void launchBrowser() {
 		stepfile.launchBrowser();
@@ -34,5 +35,14 @@ public class StepDefinition {
 	@Then("the product added to the cart should match the recorded details")
 	public void verifyProductInCart() {
 		stepfile.verifyProductInCart();
+	}
+	
+	@Given("launch")
+	public void launch() {
+		stepfile.launch();
+	}
+	@When("serch")
+	public void serch() {
+		stepfile.serch();
 	}
 }

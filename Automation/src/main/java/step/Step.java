@@ -62,4 +62,12 @@ public class Step extends TestObject{
 		Assert.assertEquals(ProductPriceInCartPage, ProductPriceInLandingPage);
 	}
 
+	public void serch() {
+		visibility(search);
+		search.sendKeys("India",Keys.ENTER);
+	}
+	
+	public void launch() {
+		driver.get("https://www.google.com/");
+	}
 }

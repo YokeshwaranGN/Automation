@@ -1,7 +1,11 @@
+@over
 Feature: Amazon Product Cart Validation
 
+#Background:
+
+@test
   Scenario Outline: Verify product addition to the cart
-    Given the browser is launched
+  Given the browser is launched
     And the user searches for "<Product Name>"
     And the user selects the product from the search results
     And the product name and price are recorded
@@ -10,4 +14,10 @@ Feature: Amazon Product Cart Validation
 
   Examples:
     | Product Name |
-    | iPhone       |
+     | iPhone       |
+     
+     @testa
+     Scenario: gogle
+     Given launch
+     When serch
+

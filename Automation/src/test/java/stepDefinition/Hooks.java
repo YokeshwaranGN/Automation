@@ -1,29 +1,18 @@
 package stepDefinition;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Hooks {
-
-	 public static WebDriver driver;
 
 	    @Before
 	    public void setUp() {
 	        System.out.println("🚀 Launching browser...");
-	        WebDriverManager.chromedriver().setup();
-	        driver = new ChromeDriver();
-	        driver.manage().window().maximize();
+	        DriverFactory.initDriver();
 	    }
 
 	    @After
 	    public void tearDown() {
-	        if (driver != null) {
-	            driver.quit();
-	            System.out.println("🧹 Closing browser...");
-	        }
-	    }
+	    	 DriverFactory.quitDriver();
 	}
+}
